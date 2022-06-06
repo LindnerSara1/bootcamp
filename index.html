@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>store</title>
+</head>
+
+<body>
+    <h2>Add Product</h2>
+    <form id="formAddProduct" action="javascript:void(0);" onsubmit="shop.addProduct()">
+        <input type="text" id="addProductName" placeholder="productName">
+        <input type="text" id="addCategory" placeholder="category">
+        <input type="number" id="addPrice" placeholder="price" min="0">
+        <input type="number" id="addQuantity" placeholder="quantity" min="0">
+        <input type="submit" id="save">
+    </form>
+    <h2>Edit Product</h2>
+    <form id="formEditProduct" action="javascript:void(0);">
+        <input type="text" id="selectedId" placeholder="enter productId to edit" min="0">
+        <input type="text" id="editProductName" placeholder="update productName"><button type="submit"
+            onclick="shop.updateName()">save</button>
+        <input type="text" id="editCategory" placeholder="update category"><button type="submit"
+            onclick="shop.updateCategory()">save</button>
+        <input type="number" id="editPrice" placeholder="update price" min="0"><button type="submit"
+            onclick="shop.updatePrice()">save</button>
+        <input type="number" id="editQuantity" placeholder="update quantity" min="0"><button type="submit"
+            onclick="shop.updateQuantity()">save</button>
+    </form>
+    <form id="search" action="javascript:void(0)">
+        <h4>searchByName</h4>
+        <input type="text" id="searchByName" placeholder="searchByName"><button
+            onclick="shop.searchByName()">search</button>
+        <h4>search by range price</h4>
+        <input type="number" id="buttomRange" placeholder="buttom range" min="0"><input type="number" id="topRange"
+            placeholder="topRange" min="0"><button onclick="shop.searchByRange()">search</button>
+        <h4>searchByCategory</h4>
+        <select id="category">
+            <option value="books">books</option>
+            <option value="clothing">clothing</option>
+            <option value="games">games</option>
+        </select>
+        <button onclick="shop.searchByCategory()">search</button>
+        <h4>search by uot of stock</h4>
+        <button onclick="shop.searchByOutOfStock()">uot of stock</button>
+        <button onclick="shop.allProducts()">all products</button>
+    </form>
+    <div id="store"></div>
+    <div id="content"></div>
+    <script src="store.js"></script>
+</body>
+
+</html>
